@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 data "aws_ami" "ubuntu" {
-  most_recent      = true
+  most_recent = true
 
   filter {
     name   = "name"
@@ -25,7 +25,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = [099720109477]
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_key_pair" "sample_key" {
